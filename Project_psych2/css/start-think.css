@@ -1,0 +1,414 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Russo One', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    width: 100%;
+    height: 125px;
+    background: rgb(48, 47, 47);
+    display: grid;
+    grid-template-columns: 15% 15% 40% 15% 15%;
+    grid-template-rows: 100%;
+    grid-template-areas: 'bo bt title bth bf';
+}
+.blockOne{
+    grid-area: bo;
+    color: blueviolet;
+}
+.active>a{
+    color: blueviolet;
+}
+.blockTwo{
+    grid-area: bt;
+}
+.title{
+    text-align: center;
+    grid-area: title;
+    padding-top: 20px;
+    color: blueviolet;
+    font-size: 33px;
+}
+.blockThree{
+    grid-area: bth;
+}
+.blockFour{
+    grid-area: bf;
+}
+.headBlock{
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+    font-size: 16px;
+}
+
+.glow {
+    width: 7%;
+    height: 10px;
+    background: blueviolet;
+    border-radius: 4px;
+    margin-left: 45%;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.headBlock:hover .glow{
+    transform: scaleX(2.5);
+}
+.wrapper {
+    transform-origin: center;
+    opacity: 0;
+    animation: popUp 1s forwards;
+    transition: transform 0.5s ease;
+}
+.wrapper:hover {
+    transform: scale(0.5);
+}
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+main{
+    width: 100%;
+    height: 1650px;
+    background: rgb(20, 20, 20);
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 18% 18% 32% 32%;
+    grid-template-areas: 
+    'infoThree infoThree infoOne infoOne' 
+    'infoThree infoThree infoOne infoOne' 
+    'infoTwo infoTwo infoTwo image-one' 
+    'image-two infoFour infoFour infoFour';
+}
+.circ{ 
+    stroke-dasharray: 30px;
+    animation: stroke 2s linear infinite;
+    }
+    .circ2{ 
+    stroke-dasharray: 33px;
+    animation: stroke2 2s linear infinite;
+    }
+    @keyframes stroke{
+      to{ 
+      stroke-dashoffset: 120.08px;
+      } 
+    }
+    @keyframes stroke2{
+      to{ 
+      stroke-dashoffset: -120.08px;
+      } 
+    }
+
+.img-block{
+    width: 85%;
+    height: 420px;
+    border: 2px solid rgb(195, 5, 148);
+    box-shadow: 2px 2px 15px rgb(195, 5, 148);
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 10%;
+    grid-area: image;
+    overflow: hidden;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+}
+.mind{
+    width: 100%;
+    height: 100%;
+    animation: anim 5s infinite;
+}
+@keyframes anim{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.info-main-one{
+    width: 85%;
+    height: 420px;
+    border: 2px solid rgb(22, 204, 12);
+    box-shadow: 2px 2px 15px rgb(22, 204, 12);
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 10%;
+    grid-area: infoOne;
+    transform: translateX(100%);
+    animation: slideIn 1s forwards;
+}
+@keyframes slideIn{
+    to{
+        transform: translateX(0);
+    }
+}
+.info-main-one>h1,
+.info-main-two>h1,
+.info-main-three>h1,
+.info-main-four>h1{
+    color: rgb(214, 214, 214);
+    text-align: left;
+    margin-top: 2%;
+    margin-left: 3%;
+}
+.info-main-one p,
+.info-main-two p,
+.info-main-three p,
+.info-main-four p,
+.image-two p{
+    color: rgb(214, 214, 214);
+    text-align: left;
+    margin-top: 5%;
+    margin-left: 3%;
+    font-size: 22px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.info-main-four>p{
+    font-size: 29px;
+}
+.info-main-two li, .info-main-four li{
+    color: rgb(214, 214, 214);
+    text-align: left;
+    margin-top: 2%;
+    margin-left: 4.5%;
+    font-size: 28px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.info-main-two p{
+    font-size: 26px;
+    margin-top: 2%;
+}
+.info-main-two{
+    width: 86%;
+    height: 460px;
+    border: 2px solid rgb(22, 204, 12);
+    box-shadow: 2px 2px 15px rgb(22, 204, 12);
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-left: 4.6%;
+    grid-area: infoTwo;
+    transform: translatey(100%);
+    animation: slideIn 1s forwards;
+}
+footer{
+    width: 100%;
+    height: 600px;
+    display: grid;
+    background: transparent linear-gradient(180deg, #141414 0%, #1B1313 17%, rgb(67, 21, 111) 77%, rgb(101, 24, 173) 100%) 0% 0% no-repeat padding-box;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+}
+.footblock{
+    width: 60%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 50%;
+}
+.maded{
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 20%;
+}
+.footblock>p{
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 5%;
+}
+.contacte{
+    font-size: 24px;
+    margin-top: 3%;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.num{
+    font-size: 24px;
+    color: white;
+    margin-top: 2%;
+}
+.cookies{
+    width: 100%;
+    height: 130px;
+    background: rgb(20, 20, 20);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 100%;
+    color: white;
+    grid-template-areas: 'img cookh cookh . button';
+}
+.cookies>img{
+    width: 40%;
+    height: 100px;
+    margin-left: 20%;
+    margin-top: 3%;
+    border: rgb(68, 68, 68);
+    border-radius: 15px;
+    grid-area: img;
+}
+.cookies-h{
+    grid-area: cookh;
+}
+.chp{
+    font-size: 18px;
+    margin-top: 6%;
+}
+.cookie-button{
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    background: none;
+    color: white;
+    border: 1px solid rgb(101, 24, 173);
+    box-shadow: 1px 1px 10px rgb(101, 24, 173);
+    grid-area: button;
+    margin-top: 15%;
+    margin-left: 20%;
+    font-size: 20px;
+}
+.nav{
+    height: 150px;
+    display: grid;
+    grid-template-columns: 15% 15% 15% 10% 10% 10% 10% 15% ;
+    grid-template-rows: 100%;
+    grid-template-areas: 'bo bt title bth bf';
+}
+.headBlock-2{
+    text-align: center;
+    color: white;
+    padding-top: 70px;
+    font-size: 12px;
+}
+.info-main-three{
+    width: 85%;
+    height: 420px;
+    border: 2px solid rgb(195, 5, 148);
+    box-shadow: 2px 2px 15px rgb(195, 5, 148);
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 10%;
+    grid-area: infoThree;
+    overflow: hidden;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+}
+.info-main-four{
+    width: 86%;
+    height: 500px;
+    border: 2px solid rgb(22, 204, 12);
+    box-shadow: 2px 2px 15px rgb(22, 204, 12);
+    margin: 0 auto;
+    margin-left: 8.8%;
+    border-radius: 20px;
+    grid-area: infoFour;
+    transform: translatey(100%);
+    animation: slideIn 1s forwards;
+}
+.page2{
+    height: 270px;
+}
+.groot-page2{
+    padding-bottom: 15%;
+    height: 600px;
+}
+.headBlock-2:hover .glow{
+    transform: scaleX(2.5);
+}
+.mimage{
+    width: 85%;
+    height: 360px;
+    border: 2px solid rgb(19, 136, 199);
+    box-shadow: 4px 4px 15px rgb(19, 136, 199);
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+}
+.img-one{
+    grid-area: image-one;  
+    margin-top: 10%; 
+    margin-right: 20%;
+}
+.img-one h1,
+.image-two h1{
+    margin-top: 35%;
+}
+.image-two{
+    grid-area: image-two;
+    margin-top: 15%;
+    margin-left: 12%;
+}
+.darker{
+    filter: brightness(60%);
+}
+
+
+.product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: white;
+    border: 1px solid #cccccc;
+  }
+  .product--unavailable {
+    filter: grayscale(1) opacity(0.7);
+  }
+  
+  .product--unavailable::before {
+    content: "Недоступно у вашому регiонi";
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+  .product--special {
+    border-color: rgb(195, 5, 148);
+  }
+  
+  .product--special::after {
+    content: "Тема дня";
+    position: absolute;
+    height: 27px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 2px solid rgb(195, 5, 148);
+    line-height: 30px;
+    color: #ffffff;
+    margin-top: -4%;
+  }
+  
